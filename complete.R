@@ -21,10 +21,9 @@ complete <- function(directory, id = 1:332) {
                 
                 data <- openspecdata(i, id, directory)     
                 
-                good <- complete.case(data[[sulfate]], data[[nitrate]])
-                x <- c(x, data[[pollutant]][good])
+                good <- complete.cases(data)
+                result$id[i] <- id[i]
+                result$nobs[i] <- length(good[good == 1])
         }
-        mean <- mean(pollut, na.rm = TRUE)
-        mean
-
+        result
 }
