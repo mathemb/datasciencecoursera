@@ -14,7 +14,7 @@ corr <- function(directory, threshold = 0) {
                 
         l <- length(compl$id)
         #l2 <- length(compl$nobs[compl$nobs >= threshold])
-        #cr <- numeric(length = l)
+        cr <- numeric(length = l)
                         
         for(i in 1:l) {
                 if (compl$nobs[i] > threshold) {
